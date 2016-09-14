@@ -7,8 +7,20 @@
 
 import scrapy
 
+class TypeOneItem(scrapy.Item):
+    title = scrapy.Field()
+    url = scrapy.Field()
+    image = scrapy.Field()
+    timestamp = scrapy.Field()
 
-class DashboardItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class TypeTwoItem(scrapy.Item):
+	title = scrapy.Field()
+	description = scrapy.Field()
+	url = scrapy.Field()
+	image = scrapy.Field()
+	timestamp = scrapy.Field()		
+
+class TypeThreeItem(scrapy.Item):
+    title = scrapy.Field()
+    url = scrapy.Field()
+    timestamp = scrapy.Field()

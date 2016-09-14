@@ -1,4 +1,14 @@
-
+<?php
+@$topic = $_GET["topic"];
+if(empty($topic)){
+  $message = "Choose a section!";
+}
+else{
+  $json_data = file_get_contents('data/'.$topic.'.json');
+  $array = json_decode(stripslashes($json_data));
+}
+?>
+<!DOCTYPE html>
 <html lang="en" id="facebook" class=" sidebarMode">
   <head>
     <meta charset="utf-8">
@@ -15,6 +25,7 @@
     <link type="text/css" rel="stylesheet" href="https://www.facebook.com/rsrc.php/v3/y1/r/WkzsXkEV9l9.css">
     <link type="text/css" rel="stylesheet" href="https://www.facebook.com/rsrc.php/v3/y-/r/jiCAMIA4NIR.css">
     <link type="text/css" rel="stylesheet" href="https://www.facebook.com/rsrc.php/v3/yE/r/Sryw-Ob_5s-.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <title id="pageTitle">[ dashboard ]</title>
     <link rel="search" type="application/opensearchdescription+xml" href="/osd.xml" title="Facebook">
   </head>
@@ -31,29 +42,26 @@
                     <div id="sideNav" class="uiFutureSideNav" role="navigation" aria-label="Apps" data-gt="{;ref;:;bookmarks;}" data-ft="{;tn;:;+H;}">
                       <div id="u_ps_0_1_0">
                         <div id="appsNav" class="homeSideNav" data-ft="{;tn;:;+X;}" data-testid="left_nav_section_APPS">
+                          <br>
                           <ul class="_bui _3-96" data-ft="{;tn;:;+X;}">
-                            <li class="clearfix sideNavItem stat_elem" data-nav-item-id="140332009231" data-type="type_game_tool" id="navItem_140332009231" data-gt="{;0;:;140332009231;,;1;:;0;,;2;:;;,;3;:;type_game_tool;,;4;:;1;,;5;:;301;,;6;:;6;,;7;:;appsNav;,;8;:;2;,;9;:;471;,;10;:;1440;,;11;:;31;,;masher;:;item;,;total;:null}">
-                              <a data-testid="left_nav_item_Games" class="_5afe" data-gt="{;bmid;:;140332009231;,;count;:;0;,;count_details;:;;,;bookmark_type;:;type_game_tool;,;rank;:;1;,;fbs;:;301;,;nav_items_count;:;6;,;nav_section;:;appsNav;,;sec_position;:;2;,;screen_height;:;471;,;screen_width;:;1440;,;total;:;31;}" title="Games" href="/games/?from_bookmark=1" draggable="false">
-                                <span class="imgWrap" data-testid="bookmark_icon_left_nav"><i class="img sp_3nfbcMT3lkm_2x sx_cc0ebc" draggable="false"></i></span>
-                                <div dir="ltr" class="linkWrap noCount"><span>Science</span></div>
+                            <li class="clearfix sideNavItem stat_elem">
+                              <a class="_5afe" href="index.php?topic=music" style="font-size:14px;">
+                                <div class="linkWrap noCount"><i class="fa fa-music"></i>&nbsp;<span>Music</span></div>
                               </a>
                             </li>
-                            <li class="clearfix sideNavItem stat_elem" data-nav-item-id="303257506544370" data-type="type_game_tool" id="navItem_303257506544370" data-gt="{;0;:;303257506544370;,;1;:;0;,;2;:;;,;3;:;type_game_tool;,;4;:;2;,;5;:;6;,;6;:;appsNav;,;7;:;2;,;8;:;471;,;9;:;1440;,;10;:;31;,;masher;:;item;,;total;:null}">
-                              <a data-testid="left_nav_item_On This Day" class="_5afe" data-gt="{;bmid;:;303257506544370;,;count;:;0;,;count_details;:;;,;bookmark_type;:;type_game_tool;,;rank;:;2;,;nav_items_count;:;6;,;nav_section;:;appsNav;,;sec_position;:;2;,;screen_height;:;471;,;screen_width;:;1440;,;total;:;31;}" title="On This Day" href="/onthisday/?source=bookmark" draggable="false">
-                                <span class="imgWrap" data-testid="bookmark_icon_left_nav"><i class="img sp_3nfbcMT3lkm_2x sx_b4a10c" draggable="false"></i></span>
-                                <div dir="ltr" class="linkWrap noCount"><span>Technology</span></div>
+                            <li class="clearfix sideNavItem stat_elem">
+                              <a class="_5afe" href="index.php?topic=entertain" style="font-size:14px;">
+                                <div class="linkWrap noCount"><i class="fa fa-video-camera"></i>&nbsp;<span>Entertainment</span></div>
                               </a>
                             </li>
-                            <li class="clearfix sideNavItem stat_elem" data-nav-item-id="303257506544370" data-type="type_game_tool" id="navItem_303257506544370" data-gt="{;0;:;303257506544370;,;1;:;0;,;2;:;;,;3;:;type_game_tool;,;4;:;2;,;5;:;6;,;6;:;appsNav;,;7;:;2;,;8;:;471;,;9;:;1440;,;10;:;31;,;masher;:;item;,;total;:null}">
-                              <a data-testid="left_nav_item_On This Day" class="_5afe" data-gt="{;bmid;:;303257506544370;,;count;:;0;,;count_details;:;;,;bookmark_type;:;type_game_tool;,;rank;:;2;,;nav_items_count;:;6;,;nav_section;:;appsNav;,;sec_position;:;2;,;screen_height;:;471;,;screen_width;:;1440;,;total;:;31;}" title="On This Day" href="/onthisday/?source=bookmark" draggable="false">
-                                <span class="imgWrap" data-testid="bookmark_icon_left_nav"><i class="img sp_3nfbcMT3lkm_2x sx_b4a10c" draggable="false"></i></span>
-                                <div dir="ltr" class="linkWrap noCount"><span>Business</span></div>
+                            <li class="clearfix sideNavItem stat_elem">
+                              <a class="_5afe" href="index.php?topic=science" style="font-size:14px;">
+                                <div class="linkWrap noCount"><i class="fa fa-bolt"></i>&nbsp;<span>Science</span></div>
                               </a>
                             </li>
-                            <li class="clearfix sideNavItem stat_elem" data-nav-item-id="303257506544370" data-type="type_game_tool" id="navItem_303257506544370" data-gt="{;0;:;303257506544370;,;1;:;0;,;2;:;;,;3;:;type_game_tool;,;4;:;2;,;5;:;6;,;6;:;appsNav;,;7;:;2;,;8;:;471;,;9;:;1440;,;10;:;31;,;masher;:;item;,;total;:null}">
-                              <a data-testid="left_nav_item_On This Day" class="_5afe" data-gt="{;bmid;:;303257506544370;,;count;:;0;,;count_details;:;;,;bookmark_type;:;type_game_tool;,;rank;:;2;,;nav_items_count;:;6;,;nav_section;:;appsNav;,;sec_position;:;2;,;screen_height;:;471;,;screen_width;:;1440;,;total;:;31;}" title="On This Day" href="/onthisday/?source=bookmark" draggable="false">
-                                <span class="imgWrap" data-testid="bookmark_icon_left_nav"><i class="img sp_3nfbcMT3lkm_2x sx_b4a10c" draggable="false"></i></span>
-                                <div dir="ltr" class="linkWrap noCount"><span>Music</span></div>
+                            <li class="clearfix sideNavItem stat_elem">
+                              <a class="_5afe" href="index.php?topic=technology" style="font-size:14px;">
+                                <div class="linkWrap noCount"><i class="fa fa-rocket"></i>&nbsp;<span>Technology</span></div>
                               </a>
                             </li>
                           </ul>
@@ -197,58 +205,6 @@
                                           </div>
                                         </div>
                                       </li>
-                                      <li data-topicid="259258474114887" class="_5my2 _3uz4" data-position="1" data-categories="[302,3]">
-                                        <div class="clearfix _uhk _4_nm">
-                                          <img class="_3uz0 _5r-z _8o lfloat _ohe img" alt="" src="https://www.facebook.com/rsrc.php/v3/y4/r/-PAXP-deijE.gif">
-                                          <div class="clearfix _42ef">
-                                            <a class="_4qzh _5v0t _7ge" href="/topic/DevilL/259258474114887?source=whfrt&amp;position=1&amp;trqid=6329527411008802168" id="u_ps_0_4_f" data-hovercard="/pubcontent/trending/hovercard/?topic_id=259258474114887&amp;topic_link_id=u_ps_0_4_f&amp;position=1&amp;source=whfrt&amp;trqid=6329527411008802168" data-hovercard-position="left" data-hovercard-offset-x="-15" data-hovercard-offset-y="10" aria-controls="js_40" aria-haspopup="true" role="null" aria-describedby="js_41">
-                                              <div>
-                                                <span class="_5v0s _5my8">Devil(L)</span>
-                                                <div class="_5v9v">3K people talking about this</div>
-                                              </div>
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li data-topicid="259258474114887" class="_5my2 _3uz4" data-position="1" data-categories="[302,3]">
-                                        <div class="clearfix _uhk _4_nm">
-                                          <img class="_3uz0 _5r-z _8o lfloat _ohe img" alt="" src="https://www.facebook.com/rsrc.php/v3/y4/r/-PAXP-deijE.gif">
-                                          <div class="clearfix _42ef">
-                                            <a class="_4qzh _5v0t _7ge" href="/topic/DevilL/259258474114887?source=whfrt&amp;position=1&amp;trqid=6329527411008802168" id="u_ps_0_4_f" data-hovercard="/pubcontent/trending/hovercard/?topic_id=259258474114887&amp;topic_link_id=u_ps_0_4_f&amp;position=1&amp;source=whfrt&amp;trqid=6329527411008802168" data-hovercard-position="left" data-hovercard-offset-x="-15" data-hovercard-offset-y="10" aria-controls="js_40" aria-haspopup="true" role="null" aria-describedby="js_41">
-                                              <div>
-                                                <span class="_5v0s _5my8">Devil(L)</span>
-                                                <div class="_5v9v">3K people talking about this</div>
-                                              </div>
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li data-topicid="259258474114887" class="_5my2 _3uz4" data-position="1" data-categories="[302,3]">
-                                        <div class="clearfix _uhk _4_nm">
-                                          <img class="_3uz0 _5r-z _8o lfloat _ohe img" alt="" src="https://www.facebook.com/rsrc.php/v3/y4/r/-PAXP-deijE.gif">
-                                          <div class="clearfix _42ef">
-                                            <a class="_4qzh _5v0t _7ge" href="/topic/DevilL/259258474114887?source=whfrt&amp;position=1&amp;trqid=6329527411008802168" id="u_ps_0_4_f" data-hovercard="/pubcontent/trending/hovercard/?topic_id=259258474114887&amp;topic_link_id=u_ps_0_4_f&amp;position=1&amp;source=whfrt&amp;trqid=6329527411008802168" data-hovercard-position="left" data-hovercard-offset-x="-15" data-hovercard-offset-y="10" aria-controls="js_40" aria-haspopup="true" role="null" aria-describedby="js_41">
-                                              <div>
-                                                <span class="_5v0s _5my8">Devil(L)</span>
-                                                <div class="_5v9v">3K people talking about this</div>
-                                              </div>
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li data-topicid="259258474114887" class="_5my2 _3uz4" data-position="1" data-categories="[302,3]">
-                                        <div class="clearfix _uhk _4_nm">
-                                          <img class="_3uz0 _5r-z _8o lfloat _ohe img" alt="" src="https://www.facebook.com/rsrc.php/v3/y4/r/-PAXP-deijE.gif">
-                                          <div class="clearfix _42ef">
-                                            <a class="_4qzh _5v0t _7ge" href="/topic/DevilL/259258474114887?source=whfrt&amp;position=1&amp;trqid=6329527411008802168" id="u_ps_0_4_f" data-hovercard="/pubcontent/trending/hovercard/?topic_id=259258474114887&amp;topic_link_id=u_ps_0_4_f&amp;position=1&amp;source=whfrt&amp;trqid=6329527411008802168" data-hovercard-position="left" data-hovercard-offset-x="-15" data-hovercard-offset-y="10" aria-controls="js_40" aria-haspopup="true" role="null" aria-describedby="js_41">
-                                              <div>
-                                                <span class="_5v0s _5my8">Devil(L)</span>
-                                                <div class="_5v9v">3K people talking about this</div>
-                                              </div>
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </li>
                                     </ul>
                                   </div>
                                 </div>
@@ -277,38 +233,43 @@
                           <div id="u_ps_0_0_j" data-referrer="u_ps_0_0_j" style="min-height: 100px;">
                             <div class="_4ikz" id="substream_0_57d706a770b6d8e58852506" data-referrer="substream_0_57d706a770b6d8e58852506">
                               <div>
-                                <div id="u_jsonp_3_0">
+
+                              <?php 
+                              if($topic == "science"){
+                                foreach($array as $item){
+                                  echo'<div id="u_jsonp_3_0">
                                   <div>
                                     <div data-fte="1" class="_5jmm _5pat _3lb4 _59m _x72">
                                       <div class="_4-u2 mbm _5v3q _4-u8" id="u_jsonp_3_2c">
-                                        <div class="_3ccb" data-gt="{;type;:;click2canvas;,;fbsource;:703,;ref;:;nf_generic;}" id="u_jsonp_3_2d">
+                                        <div class="_3ccb" id="u_jsonp_3_2d">
                                           <div class="userContentWrapper _5pcr" role="article" aria-label="Story">
                                             <div class="_1dwg _1w_m">
                                               <div class="_5x46">
                                                 <div class="clearfix _5va3">
-                                                  <a class="_5pb8 _8o _8s lfloat _ohe" href="https://www.facebook.com/yourstorycom/?ref=nf" aria-hidden="true" tabindex="-1" target="" data-ft="{;tn;:;\u003C;}" data-hovercard="/ajax/hovercard/page.php?id=467687645161">
-                                                    <div class="_38vo"><img class="_s0 _5xib _5sq7 _44ma _rw img" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xat1/v/t1.0-1/p100x100/12249955_10156223983670162_8938168055703746960_n.png?oh=ad0cfc0152a380df6343a2edf0d1439e&amp;oe=5845B1C2&amp;__gda__=1480352685_b31da7d8e262ae708f2072da0e85d7e8" alt=""></div>
-                                                  </a>
+                                                  <!--<a class="_5pb8 _8o _8s lfloat _ohe" aria-hidden="true" tabindex="-1" target="">
+                                                    <div class="_38vo"><img class="_s0 _5xib _5sq7 _44ma _rw img" src=""></div>
+                                                  </a>!-->
                                                   <div class="clearfix _42ef">
                                                     <div class="_5va4">
                                                       <div>
                                                         <div class="_6a _5u5j">
-                                                          <div class="_6a _6b" style="height:40px"></div><div class="_6a _5u5j _6b">
-                                                            <h5 class="_5pbw _5vra" data-ft="{;tn;:;C;}" id="js_2u"><span class="fwn fcg"><span class="fwb fcg" data-ft="{;tn;:;k;}"><a href="https://www.facebook.com/yourstorycom/?hc_ref=NEWSFEED&amp;fref=nf" data-hovercard="/ajax/hovercard/page.php?id=467687645161&amp;extragetparams=%7B%22hc_ref%22%3A%22NEWSFEED%22%2C%22fref%22%3A%22nf%22%7D">YourStory</a></span></span></h5>
-                                                            <div class="_5pcp"><span><span class="fsm fwn fcg"><a class="_5pcq" href="/yourstorycom/posts/10157402310305162" target=""><abbr title="Monday, September 12, 2016 at 8:16am" data-utime="1473648409" data-shorten="1" class="_5ptz timestamp livetimestamp"><span class="timestampContent" id="js_2v">17 hrs</span></abbr></a></span></span></div>
+                                                          <div class="_6a _5u5j _6b">
+                                                            <h5 class="_5pbw _5vra" id="js_2u"><span class="fwn fcg"><span class="fwb fcg"><a href="'.$item->url.'">'.$item->title.'</a></span></span></h5>
+                                                            <div class="_5pcp"><span><span class="fsm fwn fcg"><abbr class="_5ptz timestamp livetimestamp"><span class="timestampContent" id="js_2v">'.$item->timestamp.'</span></abbr></span></span></div>
                                                           </div>
                                                         </div>
                                                       </div>
                                                     </div>
                                                   </div>
+                                                  <p align="center"><img src=""></p>
                                                 </div>
                                               </div>
-                                              <div class="_5pbx userContent" data-ft="{;tn;:;K;}" id="js_2w">
-                                                <p>What do you think about the new logo? Tell us in the comments below.</p>
+                                              <div class="_5pbx userContent" id="js_2w">
+                                                <p style="font-size:13px;"><a href="'.$item->url.'">Read More Here.</a></p>
                                               </div>
                                             </div>
                                             <div>
-                                              <form rel="async" class="commentable_item collapsed_comments" method="post" data-ft="{;tn;:;];}" action="/ajax/ufi/modify.php">
+                                              <form rel="async" class="commentable_item collapsed_comments" method="post">
                                                 <div class="_sa_ _5vsi _ca7 _192z">
                                                   <div class="_37uu">
                                                     <div data-reactroot="">
@@ -331,43 +292,44 @@
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="_4ikz" id="substream_0_57d706a770b6d8e58852506" data-referrer="substream_0_57d706a770b6d8e58852506">
-                              <div>
-                                <div id="u_jsonp_3_0">
+                                </div>';
+                                }
+                              }
+                              else if($topic == "tech" || $topic == "music" || $topic == "entertain"){
+                                foreach($array as $item){
+                                  echo'<div id="u_jsonp_3_0">
                                   <div>
                                     <div data-fte="1" class="_5jmm _5pat _3lb4 _59m _x72">
                                       <div class="_4-u2 mbm _5v3q _4-u8" id="u_jsonp_3_2c">
-                                        <div class="_3ccb" data-gt="{;type;:;click2canvas;,;fbsource;:703,;ref;:;nf_generic;}" id="u_jsonp_3_2d">
+                                        <div class="_3ccb" id="u_jsonp_3_2d">
                                           <div class="userContentWrapper _5pcr" role="article" aria-label="Story">
                                             <div class="_1dwg _1w_m">
                                               <div class="_5x46">
                                                 <div class="clearfix _5va3">
-                                                  <a class="_5pb8 _8o _8s lfloat _ohe" href="https://www.facebook.com/yourstorycom/?ref=nf" aria-hidden="true" tabindex="-1" target="" data-ft="{;tn;:;\u003C;}" data-hovercard="/ajax/hovercard/page.php?id=467687645161">
-                                                    <div class="_38vo"><img class="_s0 _5xib _5sq7 _44ma _rw img" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xat1/v/t1.0-1/p100x100/12249955_10156223983670162_8938168055703746960_n.png?oh=ad0cfc0152a380df6343a2edf0d1439e&amp;oe=5845B1C2&amp;__gda__=1480352685_b31da7d8e262ae708f2072da0e85d7e8" alt=""></div>
-                                                  </a>
+                                                  <!--<a class="_5pb8 _8o _8s lfloat _ohe" aria-hidden="true" tabindex="-1" target="">
+                                                    <div class="_38vo"><img class="_s0 _5xib _5sq7 _44ma _rw img" src=""></div>
+                                                  </a>!-->
                                                   <div class="clearfix _42ef">
                                                     <div class="_5va4">
                                                       <div>
                                                         <div class="_6a _5u5j">
-                                                          <div class="_6a _6b" style="height:40px"></div><div class="_6a _5u5j _6b">
-                                                            <h5 class="_5pbw _5vra" data-ft="{;tn;:;C;}" id="js_2u"><span class="fwn fcg"><span class="fwb fcg" data-ft="{;tn;:;k;}"><a href="https://www.facebook.com/yourstorycom/?hc_ref=NEWSFEED&amp;fref=nf" data-hovercard="/ajax/hovercard/page.php?id=467687645161&amp;extragetparams=%7B%22hc_ref%22%3A%22NEWSFEED%22%2C%22fref%22%3A%22nf%22%7D">YourStory</a></span></span></h5>
-                                                            <div class="_5pcp"><span><span class="fsm fwn fcg"><a class="_5pcq" href="/yourstorycom/posts/10157402310305162" target=""><abbr title="Monday, September 12, 2016 at 8:16am" data-utime="1473648409" data-shorten="1" class="_5ptz timestamp livetimestamp"><span class="timestampContent" id="js_2v">17 hrs</span></abbr></a></span></span></div>
+                                                          <div class="_6a _5u5j _6b">
+                                                            <h5 class="_5pbw _5vra" id="js_2u"><span class="fwn fcg"><span class="fwb fcg"><a href="'.$item->url.'">'.$item->title.'</a></span></span></h5>
+                                                            <div class="_5pcp"><span><span class="fsm fwn fcg"><abbr class="_5ptz timestamp livetimestamp"><span class="timestampContent" id="js_2v">'.$item->timestamp.'</span></abbr></span></span></div>
                                                           </div>
                                                         </div>
                                                       </div>
                                                     </div>
                                                   </div>
+                                                  <p align="center"><img src="'.$item->image.'"></p>
                                                 </div>
                                               </div>
-                                              <div class="_5pbx userContent" data-ft="{;tn;:;K;}" id="js_2w">
-                                                <p>What do you think about the new logo? Tell us in the comments below.</p>
+                                              <div class="_5pbx userContent" id="js_2w">
+                                                <p>'.$item->description.'</p>
                                               </div>
                                             </div>
                                             <div>
-                                              <form rel="async" class="commentable_item collapsed_comments" method="post" data-ft="{;tn;:;];}" action="/ajax/ufi/modify.php">
+                                              <form rel="async" class="commentable_item collapsed_comments" method="post">
                                                 <div class="_sa_ _5vsi _ca7 _192z">
                                                   <div class="_37uu">
                                                     <div data-reactroot="">
@@ -390,66 +352,11 @@
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="_4ikz" id="substream_0_57d706a770b6d8e58852506" data-referrer="substream_0_57d706a770b6d8e58852506">
-                              <div>
-                                <div id="u_jsonp_3_0">
-                                  <div>
-                                    <div data-fte="1" class="_5jmm _5pat _3lb4 _59m _x72">
-                                      <div class="_4-u2 mbm _5v3q _4-u8" id="u_jsonp_3_2c">
-                                        <div class="_3ccb" data-gt="{;type;:;click2canvas;,;fbsource;:703,;ref;:;nf_generic;}" id="u_jsonp_3_2d">
-                                          <div class="userContentWrapper _5pcr" role="article" aria-label="Story">
-                                            <div class="_1dwg _1w_m">
-                                              <div class="_5x46">
-                                                <div class="clearfix _5va3">
-                                                  <a class="_5pb8 _8o _8s lfloat _ohe" href="https://www.facebook.com/yourstorycom/?ref=nf" aria-hidden="true" tabindex="-1" target="" data-ft="{;tn;:;\u003C;}" data-hovercard="/ajax/hovercard/page.php?id=467687645161">
-                                                    <div class="_38vo"><img class="_s0 _5xib _5sq7 _44ma _rw img" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xat1/v/t1.0-1/p100x100/12249955_10156223983670162_8938168055703746960_n.png?oh=ad0cfc0152a380df6343a2edf0d1439e&amp;oe=5845B1C2&amp;__gda__=1480352685_b31da7d8e262ae708f2072da0e85d7e8" alt=""></div>
-                                                  </a>
-                                                  <div class="clearfix _42ef">
-                                                    <div class="_5va4">
-                                                      <div>
-                                                        <div class="_6a _5u5j">
-                                                          <div class="_6a _6b" style="height:40px"></div><div class="_6a _5u5j _6b">
-                                                            <h5 class="_5pbw _5vra" data-ft="{;tn;:;C;}" id="js_2u"><span class="fwn fcg"><span class="fwb fcg" data-ft="{;tn;:;k;}"><a href="https://www.facebook.com/yourstorycom/?hc_ref=NEWSFEED&amp;fref=nf" data-hovercard="/ajax/hovercard/page.php?id=467687645161&amp;extragetparams=%7B%22hc_ref%22%3A%22NEWSFEED%22%2C%22fref%22%3A%22nf%22%7D">YourStory</a></span></span></h5>
-                                                            <div class="_5pcp"><span><span class="fsm fwn fcg"><a class="_5pcq" href="/yourstorycom/posts/10157402310305162" target=""><abbr title="Monday, September 12, 2016 at 8:16am" data-utime="1473648409" data-shorten="1" class="_5ptz timestamp livetimestamp"><span class="timestampContent" id="js_2v">17 hrs</span></abbr></a></span></span></div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <div class="_5pbx userContent" data-ft="{;tn;:;K;}" id="js_2w">
-                                                <p>What do you think about the new logo? Tell us in the comments below.</p>
-                                              </div>
-                                            </div>
-                                            <div>
-                                              <form rel="async" class="commentable_item collapsed_comments" method="post" data-ft="{;tn;:;];}" action="/ajax/ufi/modify.php">
-                                                <div class="_sa_ _5vsi _ca7 _192z">
-                                                  <div class="_37uu">
-                                                    <div data-reactroot="">
-                                                      <div class="_3399 _1f6t _4_dr">
-                                                        <div class="_524d">
-                                                          <div class="_ipn">
-                                                            <div class="_ipo">
-                                                              <div class="_36_q">Kuch toh, time and data</div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </form>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                </div>';
+                                }
+                              }
+                              ?>
+
                               </div>
                             </div>
                           </div>
