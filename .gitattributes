@@ -1,4 +1,3 @@
 * text=auto
-static/css/*.css linguist-vendored=true
-static/js/*.js linguist-vendored=true
+*.php linguist-vendored=true
 * linguist-language=Python
