@@ -9,10 +9,17 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
+import os
+import django
+
+# Necessary for scrapy's access to django environment.
+os.environ['DJANGO_SETTINGS_MODULE'] = 'scraper.settings'
+django.setup()
+
 BOT_NAME = 'dashboard'
 
-SPIDER_MODULES = ['dashboard.spiders']
-NEWSPIDER_MODULE = 'dashboard.spiders'
+SPIDER_MODULES = ['crawlers.spiders']
+NEWSPIDER_MODULE = 'crawlers.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

@@ -1,5 +1,6 @@
 from time import gmtime, strftime
 
+from django.db import IntegrityError
 from scrapy import Spider
 from scrapy.selector import Selector
 
@@ -18,7 +19,7 @@ class MusicSpider(Spider):
 
         for news in news_list:
             try:
-                title = news.xpath('div[@class="cb-meta clearfix"]/h2[@class="cb-post-title"]/a/text()').extract()[0]
+                # title = news.xpath('div[@class="cb-meta clearfix"]/h2[@class="cb-post-title"]/a/text()').extract()[0]
                 url = news.xpath('div[@class="cb-meta clearfix"]/h2[@class="cb-post-title"]/a/@href').extract()[0]
                 description = news.xpath('div[@class="cb-meta clearfix"]/div[@class="cb-excerpt"]/text()').extract()[0]
                 image_url = news.xpath('div[@class="cb-mask cb-img-fw"]/a/img/@data-src').extract()[0]
@@ -26,11 +27,17 @@ class MusicSpider(Spider):
                 continue
 
             item = MusicDjangoItem(
-                title=title,
+                # title=title,
                 url=url,
                 image_url=image_url,
                 description=description
             )
-            item.save()
+
+            # DjangoItem objects lack convenience methods of model objects like
+            # update_or_create. So a quick and dirty error handling is done here
+            try:
+                item.save()
+            except IntegrityError:
+                continue
 
             yield item

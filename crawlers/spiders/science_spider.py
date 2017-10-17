@@ -1,5 +1,4 @@
-from time import gmtime, strftime
-
+from django.db import IntegrityError
 from scrapy import Spider
 from scrapy.selector import Selector
 
@@ -24,6 +23,11 @@ class ScienceSpider(Spider):
                 continue
 
             item = ScienceDjangoItem(title=title, url=url)
-            item.save()
+            # DjangoItem objects lack convenience methods of model objects like
+            # update_or_create. So a quick and dirty error handling is done here
+            try:
+                item.save()
+            except IntegrityError:
+                continue
 
             yield item
