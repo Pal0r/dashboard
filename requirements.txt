@@ -1,0 +1,4 @@
+django==1.11
+django-extensions==1.4.0
+scrapy-djangoitem==1.1.1
+scrapy==1.4.0
