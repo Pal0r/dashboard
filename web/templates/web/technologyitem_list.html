@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Technology{% endblock %}
+{% block content %}
+  <h1 class="grey-text text-darken-2">Technology Items</h1>
+  {% include 'web/object_list_partial.html' with object_list=object_list %}
+{% endblock %}
